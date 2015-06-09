@@ -1,28 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/StartLayout"
-	android:orientation="horizontal"
+    android:orientation="vertical"
 	android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:background="#FFFFFF">
+    android:layout_height="fill_parent">
     
-    <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"/>
+<FrameLayout 
+    android:id="@+id/StartLayout"
+	android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/MainMenuImg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center"
-        android:src="@drawable/unnamed" />
+<fragment
+          android:id="@+id/map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:name="com.google.android.gms.maps.MapFragment"/>
+
+<ImageView
+    android:id="@+id/aim_bounds"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/transparent"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"/>
+
+<ImageView
+    android:id="@+id/piece"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/piece"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"/>
+
+<ImageView
+    android:id="@+id/aim_pic"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/circle"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"/>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:id="@+id/layout_way"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_gravity="top"
+    android:layout_weight="23"
+>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        />
+    
+    <EditText
+        android:id="@+id/Addr"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="12"
+        android:inputType="numberSigned"
+        android:maxLength="6"
+        android:maxLines="1"
+        android:background="#99FFFFFF"
+        android:layout_margin="4dp"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/GoButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/go"
+        android:background="@drawable/btn_bg"
+        android:layout_margin="3dp"/>
     
     <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"/>
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+    
+    <ImageButton
+        android:id="@+id/HomeButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home"
+        android:background="@drawable/btn_bg"
+        android:layout_margin="3dp"/>
+    "
+</LinearLayout>
+
+<View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        />
+
+</LinearLayout>
+
+<ZoomControls
+    android:id="@+id/zoomControls1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center" />
+
+</FrameLayout>
 
 </LinearLayout>
